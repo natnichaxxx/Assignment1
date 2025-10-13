@@ -29,4 +29,3 @@ curl -X GET https://assignment1-1-imgr.onrender.com/status/66010233`
 curl -X GET https://assignment1-1-imgr.onrender.com/logs/66010233`
 - POST /logs → `
 curl -X POST https://assignment1-1-imgr.onrender.com/logs -H "Content-Type: application/json" -d '{"drone_id":66010233,"drone_name":"Test","country":"TH","celsius":34}'`
-# Assignment1
