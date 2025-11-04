@@ -22,10 +22,10 @@ npm start
 ## Test
 
 - GET /configs/:droneId → `
-curl -X GET https://assignment1-1-imgr.onrender.com/configs/66010233`
+curl -X GET https://assignment1-tbdw.onrender.com/configs/66010233`
 - GET /status/:droneId → `
-curl -X GET https://assignment1-1-imgr.onrender.com/status/66010233`
+curl -X GET https://assignment1-tbdw.onrender.com/status/66010233`
 - GET /logs/:droneId → `
-curl -X GET https://assignment1-1-imgr.onrender.com/logs/66010233`
+curl -X GET https://assignment1-tbdw.onrender.com/logs/66010233`
 - POST /logs → `
-curl -X POST https://assignment1-1-imgr.onrender.com/logs -H "Content-Type: application/json" -d '{"drone_id":66010233,"drone_name":"Test","country":"TH","celsius":34}'`
+curl -X POST https://assignment1-tbdw.onrender.com/logs -H "Content-Type: application/json" -d '{"drone_id":66010233,"drone_name":"Test","country":"TH","celsius":34}'`
