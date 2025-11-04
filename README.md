@@ -18,7 +18,6 @@ npm install
 ```bash
 npm start
 ```
-use nodemon
 
 ## Test
 
