@@ -1,6 +1,6 @@
 const apiClient = require("../utils/apiClient");
 const LOG_URL = process.env.LOG_URL;
-//const LOG_API_TOKEN = process.env.LOG_API_TOKEN;
+const LOG_API_TOKEN = process.env.LOG_API_TOKEN;
 
 // GET /logs/:droneId
 exports.getLogs = async (req, res) => {
@@ -11,7 +11,11 @@ exports.getLogs = async (req, res) => {
     const perPage = req.query.perPage || 12;
 
     const getUrl = `${LOG_URL}?filter=(drone_id='${droneId}')&sort=-created&page=${page}&perPage=${perPage}`;
-    const response = await apiClient.get(getUrl);
+    const response = await apiClient.get(getUrl, {
+      headers: {
+        'Authorization': `Bearer ${LOG_API_TOKEN}`
+      }
+    });
     
     const items = response.data.items || [];
     const { totalItems, totalPages } = response.data;
@@ -55,19 +59,22 @@ exports.getLogs = async (req, res) => {
 exports.createLog = async (req, res) => {
   try {
     const { drone_id, drone_name, country, celsius } = req.body;
-
-    // ใช้ PocketBase API format
-    const pocketbaseUrl = `${LOG_URL}`;
+    const LOG_API_TOKEN = process.env.LOG_API_TOKEN;
+    const pUrl = `${LOG_URL}`;
     
     const response = await apiClient.post(
-      pocketbaseUrl,
+      pUrl,
       { 
         drone_id, 
         drone_name, 
         country, 
         celsius 
+      },
+      { 
+        headers: {
+          'Authorization': `Bearer ${LOG_API_TOKEN}`
+        }
       }
-      // PocketBase ไม่ต้องใช้ Authorization header สำหรับ public collections
     );
 
     const createdRecord = {

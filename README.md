@@ -11,13 +11,14 @@
 
 ```bash
 git clone <your-repo>
-npm i express dotenv cors axios pocketbase
+npm install
 ```
 
 ## Run
 ```bash
-npm run dev
+npm start
 ```
+use nodemon
 
 ## Test
 
