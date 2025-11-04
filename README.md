@@ -10,7 +10,7 @@
 ## Setup
 
 ```bash
-git clone <your-repo>
+git clone <https://github.com/natnichaxxx/Assignment1.git>
 npm install
 ```
 
