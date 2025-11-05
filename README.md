@@ -43,6 +43,6 @@ curl -X GET https://assignment1-tbdw.onrender.com/logs/66010233`
 - POST /logs → `
 curl -X POST https://assignment1-tbdw.onrender.com/logs -H "Content-Type: application/json" -d '{"drone_id":66010233,"drone_name":"Test","country":"TH","celsius":34}'`
 
-### หมายเหตุ
+#### หมายเหตุ
 - server นี้ใช้ Free Tier ของ Render ซึ่งอาจ Spin Down หากไม่มีการใช้งาน 15-30 นาที
 - หากเข้าใช้งานครั้งแรกแล้วเจอ 502 Bad Gateway ให้รอสักครู่แล้ว Refresh (เป็นการ Cold Start)
